@@ -78,6 +78,7 @@ button:hover {
   #message {
     font-size: 16px;
     width: 90%;
+    text-align: center;
   }
 
   button {
@@ -87,6 +88,7 @@ button:hover {
 
   #cat-img {
     max-height: 180px;
+    max-width: 80%;
     margin-top: 16px;
   }
 }
