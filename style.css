@@ -16,7 +16,8 @@
       padding: 40px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      max-width: 420px;
+        max-width: 420px;
+        height: 500px;
       position: relative;
     }
 
@@ -52,3 +53,29 @@
       width: 200px;
       margin-top: 20px;
     }
+
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    #message {
+      font-size: 16px;
+        width: 80%;
+    }
+
+    button {
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+
+    #cat-img {
+      max-height: 180px;
+      margin-top: 16px;
+    }
+  }
