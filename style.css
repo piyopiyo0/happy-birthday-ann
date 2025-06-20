@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS', sans-serif;
   background: url(https://img.freepik.com/free-vector/cats-pattern_1069-159.jpg) repeat;
   min-height: 100vh;
   display: flex;
