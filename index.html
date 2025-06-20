@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>З Днем народження!</title>
+</head>
+<body>
+  <div class="card">
+    <h1>З Днем народження!</h1>
+    <p id="message">Натисни кнопку 🎁</p>
+    <img id="cat-img" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Котик" />
+    <button onclick="showRandomCatAndMessage()">Тиць! 😸</button>
+  </div>
+
+  <script>
+    const cats = [
+      "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+      "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",
+      "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
+      "https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif",
+ "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNThranVkY2NzZjc3cjl3NWRsNTZ2YnFndGRnbXNhNG82YW9pNDl6MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gl8ymnpv4Sqha/giphy.gif",
+      "https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif",
+ "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzEyc3ZlZXhvbnIwem44a28xeDE1NHZ3eWd0dGt4N3BoMHdpMzY3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif",
+   "https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif",
+  "https://media.giphy.com/media/WXB88TeARFVvi/giphy.gif",
+    ];
+
+    const messages = [
+      "Нехай у житті буде багато сонця, сміху й кошачої мʼяти 😸",
+      "Щастя, здоров’я і щоб котик на колінах — завжди!",
+      "Нехай кожен день буде як ласкаве мурр!",
+      "Ти чудова! Навіть коти тобі заздрять 😻",
+      "Хай усе буде по-котячому добре: тепло, м’яко і смачно!",
+      "Така як ти – тільки ти!"
+    ];
+
+    function showRandomCatAndMessage() {
+  const cat = cats[Math.floor(Math.random() * cats.length)];
+  const msg = messages[Math.floor(Math.random() * messages.length)];
+
+  document.getElementById('cat-img').src = cat;
+  document.getElementById('message').textContent = msg;
+
+  const audio = document.getElementById('bg-music');
+  if (audio.paused) {
+    audio.play().catch(() => {
+      alert("🎵 Дозволь відтворення звуку у браузері (перевір кнопку в адресному рядку)");
+    });
+  }
+}
+  </script>
+<audio id="bg-music" preload="auto" loop>
+  <source src="https://www.epidemicsound.com/track/YUQevP9jP8/" type="audio/mpeg">
+  Ваш браузер не підтримує аудіо.
+</audio>
+</body>
+</html>
