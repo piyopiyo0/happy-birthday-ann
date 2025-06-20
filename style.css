@@ -1,0 +1,54 @@
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: url(https://img.freepik.com/free-vector/cats-pattern_1069-159.jpg) 50% 10%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 420px;
+      position: relative;
+    }
+
+    h1 {
+      color: #ff6f61;
+      margin-bottom: 10px;
+    }
+
+    #message {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      border: none;
+      background-color: #ff6f61;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e4574d;
+    }
+
+    #cat-img {
+      width: 200px;
+      margin-top: 20px;
+    }
