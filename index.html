@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  
   <title>З Днем народження, Аню)</title>
 </head>
 <body>
@@ -55,6 +57,12 @@
           alert("🎵 Дозволь відтворення звуку у браузері (перевір кнопку в адресному рядку)");
         });
       }
+
+    confetti({
+    particleCount: 150,
+    spread: 90,
+    origin: { y: 0.6 }
+  });
     }
 
     document.addEventListener("visibilitychange", () => {
