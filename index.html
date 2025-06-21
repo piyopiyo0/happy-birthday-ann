@@ -20,13 +20,13 @@
       "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",
       "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
       "https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif",
-      "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNThranVkY2NzZjc3cjl3NWRsNTZ2YnFndGRnbXNhNG82YW9pNDl6MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gl8ymnpv4Sqha/giphy.gif",
+      "https://media.giphy.com/media/gl8ymnpv4Sqha/giphy.gif",
       "https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif",
-      "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzEyc3ZlZXhvbnIwem44a28xeDE1NHZ3eWd0dGt4N3BoMHdpMzY3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif",
+      "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif",
       "https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif",
-      "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnh1N2xvYmw3bXp3cHU4Z3NmNnBrMzltbjQ0dWl6MHJ1dzJnYnI1MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/B6odR0DhsStfW/giphy.gif",
-      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExengxb3VicjVoODdvcmg4aXA0Nmh6Nm84aGkxcGozOGVzYzVleG5nNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GeimqsH0TLDt4tScGw/giphy.gif",
-      "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXIxZzJiY29yMTZwaXZzZDE0eWU4N3ZtMTFydnl5aDVkcWp4aDJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11s7Ke7jcNxCHS/giphy.gif"
+      "https://media.giphy.com/media/B6odR0DhsStfW/giphy.gif",
+      "https://media.giphy.com/media/GeimqsH0TLDt4tScGw/giphy.gif",
+      "https://media.giphy.com/media/11s7Ke7jcNxCHS/giphy.gif"
     ];
 
     const messages = [
@@ -43,19 +43,26 @@
     ];
 
     function showRandomCatAndMessage() {
-  const cat = cats[Math.floor(Math.random() * cats.length)];
-  const msg = messages[Math.floor(Math.random() * messages.length)];
+      const cat = cats[Math.floor(Math.random() * cats.length)];
+      const msg = messages[Math.floor(Math.random() * messages.length)];
 
-  document.getElementById('cat-img').src = cat;
-  document.getElementById('message').textContent = msg;
+      document.getElementById('cat-img').src = cat;
+      document.getElementById('message').textContent = msg;
 
-  const audio = document.getElementById('bg-music');
-  if (audio.paused) {
-    audio.play().catch(() => {
-      alert("🎵 Дозволь відтворення звуку у браузері (перевір кнопку в адресному рядку)");
+      const audio = document.getElementById('bg-music');
+      if (audio.paused) {
+        audio.play().catch(() => {
+          alert("🎵 Дозволь відтворення звуку у браузері (перевір кнопку в адресному рядку)");
+        });
+      }
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      const audio = document.getElementById('bg-music');
+      if (document.hidden && !audio.paused) {
+        audio.pause();
+      }
     });
-  }
-}
   </script>
 <audio id="bg-music" preload="auto" loop>
   <source src="happy-birthday.mp3" type="audio/mpeg">
